@@ -1,4 +1,5 @@
 import 'package:appointment/Widget/molecules/FForms.dart';
+import 'package:appointment/Widget/molecules/GridLook.dart';
 import 'package:appointment/state/state.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,10 @@ class UserHomePage extends StatelessWidget {
                 FForms(
                   width: size.width * 0.70,
                   height: size.height * 0.06,
-                  icon: Icon(Icons.search, color: Colors.grey[500],),
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.grey[500],
+                  ),
                   text: "Search",
                   labeltext: false,
                 )
@@ -71,7 +75,10 @@ class UserHomePage extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                 ),
-
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0, top: 10.0, right: 15.0, bottom: 20.0),
+                  child: Container(height: size.height*0.25, width: size.width*0.50, child: GridLook()),
+                ),
               ],
             ),
           )
