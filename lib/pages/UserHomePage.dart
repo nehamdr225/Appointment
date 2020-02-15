@@ -1,10 +1,25 @@
-import 'package:appointment/Widget/molecules/FForms.dart';
-import 'package:appointment/Widget/molecules/GridLook.dart';
-import 'package:appointment/state/state.dart';
+import 'package:appointment/Widget/molecules/SearchBar.dart';
+// import 'package:appointment/core/atoms/FForms.dart';
+import 'package:appointment/Widget/molecules/GridList.dart';
+import 'package:appointment/core/const.dart';
+import 'package:appointment/state/bloc.dart';
+
 import 'package:flutter/material.dart';
 
-class UserHomePage extends StatelessWidget {
+class UserHomePage extends StatefulWidget {
   @override
+  _UserHomePageState createState() => _UserHomePageState();
+}
+
+class _UserHomePageState extends State<UserHomePage> {
+  HomeScreenBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = HomeScreenBloc();
+  }
+
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     final textStyle = Theme.of(context).textTheme;
@@ -22,25 +37,48 @@ class UserHomePage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'What are you looking for today, Neha?',
-                  style: textStyle.headline.copyWith(
-                    color: textDarkMode,
-                    fontSize: 24.0,
-                  ),
+                  style:
+                      textStyle.headline.copyWith(fontWeight: FontWeight.w600),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
-                FForms(
-                  width: size.width * 0.70,
-                  height: size.height * 0.06,
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.grey[500],
-                  ),
-                  text: "Search",
-                  labeltext: false,
-                )
+                StreamBuilder<int>(
+                  stream: _bloc.index,
+                  initialData: 0,
+                  builder: (context, snapshot) {
+                    final index = snapshot.data;
+                    return Stack(
+                      children: <Widget>[
+                        IndexedStack(
+                          index: index,
+                          children: <Widget>[
+                            SearchBar(bloc: _bloc),
+                          ],
+                        )
+                      ],
+                    );
+                  },
+                ),
+                // StreamBuilder<bool>(
+                //   stream: _bloc.searching,
+                //   initialData: false,
+                //   builder: (context, snapshot){
+                //     final hideBottomBar = snapshot.data;
+                //     if(hideBottomBar){
+                //       return Container(height: 0,);
+                //     }
+                //     return Align(
+                //       alignment: Alignment.bottomCenter,
+                //       child: Container(
+                //         height: 60,
+                //         margin: EdgeInsets.symmetric(),
+
+                //       ),
+                //     );
+                //   },
+                // ),
               ],
             ),
           ),
@@ -62,23 +100,33 @@ class UserHomePage extends StatelessWidget {
             height: size.height * 0.86,
             width: size.width,
             color: color.onSurface,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
+              //crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(left: 18.0),
                   child: Text(
                     'Near You',
                     style: textStyle.headline.copyWith(
-                      color: textLight_Blue,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
                     ),
                     textAlign: TextAlign.justify,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0, top: 10.0, right: 15.0, bottom: 20.0),
-                  child: Container(height: size.height*0.25, width: size.width*0.50, child: GridLook()),
-                ),
+                Container(
+                    padding: const EdgeInsets.only(
+                      left: 12.0,
+                      top: 10.0,
+                      right: 12.0,
+                    ),
+                    height: size.height * 0.86,
+                    width: size.width,
+                    child: GridList(
+                      listViews: NearYou,
+                      crossAxisCount: 2,
+                    )),
               ],
             ),
           )
