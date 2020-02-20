@@ -1,4 +1,4 @@
-import 'package:appointment/pages/UserHomePage.dart';
+import 'package:appointment/pages/NavigationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -40,9 +40,10 @@ class ServiceApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme.getTheme(),
+      darkTheme: theme.serviceDarkTheme,
+      theme: theme.serviceLightTheme,
       home: SafeArea(
-        child: UserHomePage(),
+        child: NavigationPage(),
       )
     );
   }

@@ -13,7 +13,7 @@ class _SearchBarState extends State<SearchBar> {
   HomeScreenBloc get _bloc => widget.bloc;
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme;
+    //final color = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(top: 0.0),
       child: StreamBuilder<bool>(
@@ -53,7 +53,7 @@ class _SearchBarState extends State<SearchBar> {
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     height: 46,
                     decoration: BoxDecoration(
-                      color: color.background,
+                      color: Colors.white.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Stack(
@@ -61,7 +61,7 @@ class _SearchBarState extends State<SearchBar> {
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.only(left: 15, right: 105),
-                          child: Icon(Icons.search, color: Colors.white54),
+                          child: Icon(Icons.search, color: Colors.black26),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 55),

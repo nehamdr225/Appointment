@@ -44,41 +44,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 SizedBox(
                   height: 20.0,
                 ),
-                StreamBuilder<int>(
-                  stream: _bloc.index,
-                  initialData: 0,
-                  builder: (context, snapshot) {
-                    final index = snapshot.data;
-                    return Stack(
-                      children: <Widget>[
-                        IndexedStack(
-                          index: index,
-                          children: <Widget>[
-                            SearchBar(bloc: _bloc),
-                          ],
-                        )
-                      ],
-                    );
-                  },
-                ),
-                // StreamBuilder<bool>(
-                //   stream: _bloc.searching,
-                //   initialData: false,
-                //   builder: (context, snapshot){
-                //     final hideBottomBar = snapshot.data;
-                //     if(hideBottomBar){
-                //       return Container(height: 0,);
-                //     }
-                //     return Align(
-                //       alignment: Alignment.bottomCenter,
-                //       child: Container(
-                //         height: 60,
-                //         margin: EdgeInsets.symmetric(),
-
-                //       ),
-                //     );
-                //   },
-                // ),
+                SearchBar(bloc: _bloc),
               ],
             ),
           ),
