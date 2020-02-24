@@ -1,1 +1,1 @@
-export 'package:appointment/core/theme.dart';
+export 'package:appointment/UI/core/theme.dart';
