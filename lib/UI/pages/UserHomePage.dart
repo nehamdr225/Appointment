@@ -5,6 +5,7 @@ import 'package:appointment/UI/core/atoms/AppBarW.dart';
 import 'package:appointment/UI/core/const.dart';
 import 'package:appointment/UI/core/theme.dart';
 import 'package:appointment/state/bloc.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -43,22 +44,34 @@ class _UserHomePageState extends State<UserHomePage> {
             color: color.primaryVariant,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'What are you looking for today, Neha?',
-                  style:
-                      textStyle.body2.copyWith(fontWeight: FontWeight.w600, fontSize: 24.0),
-                  textAlign: TextAlign.center,
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "Welcome Neha!",
+                    style: textStyle.body2
+                        .copyWith(fontWeight: FontWeight.w600, fontSize: 22.0),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, top:5.0),
+                  child: Text(
+                    'What are you looking for today?',
+                    style: textStyle.body2
+                        .copyWith(fontWeight: FontWeight.w400, fontSize: 20.0),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
                 SearchBar(bloc: _bloc),
               ],
             ),
           ),
-          Container( 
+          Container(
             color: color.primaryVariant,
             height: 10.0,
           ),
@@ -82,14 +95,23 @@ class _UserHomePageState extends State<UserHomePage> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
-                  child: Text(
-                    'Near You',
-                    style: textStyle.body1.copyWith(
-                      fontSize: 19.0,
-                      fontWeight: FontWeight.w600,
-                    color: textDark.withOpacity(0.7)
-                    ),
-                    textAlign: TextAlign.justify,
+                  child: Row(
+                    children: <Widget>[
+                      Image.asset(
+                        "assets/icons/compass.png",
+                        color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                        height: 35.0,
+                      ),
+                      SizedBox(width: 5,),
+                      Text(
+                        'Explore',
+                        style: textStyle.body1.copyWith(
+                            fontSize: 19.0,
+                            fontWeight: FontWeight.w600,
+                            color: textDark.withOpacity(0.7)),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ],
                   ),
                 ),
                 Container(

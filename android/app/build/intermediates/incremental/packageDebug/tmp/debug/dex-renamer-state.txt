@@ -1,4 +1,4 @@
-#Mon Feb 24 22:27:27 NPT 2020
+#Tue Feb 25 00:29:08 NPT 2020
 base.0=/run/media/nae/workshop/HInfoTech/appointment/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

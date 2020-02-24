@@ -176,7 +176,7 @@ class ProfilePage extends StatelessWidget {
                     color: textDark.withOpacity(0.6)),
               ),
             ),
-            ProfileCard(
+            ProfileCard( //General options
               widgets: [
                 FRaisedButton(
                   elevation: 0.5,
@@ -189,7 +189,7 @@ class ProfilePage extends StatelessWidget {
                   radius: 5.0,
                   leadingIcon: Image.asset(
                     "assets/icons/profile.png",
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                     height: 24.0,
                   ),
                   trailingIcon: Icon(
@@ -210,7 +210,7 @@ class ProfilePage extends StatelessWidget {
                   needIcon: true,
                   leadingIcon: Image.asset(
                     "assets/icons/account.png",
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                     height: 24.0,
                   ),
                   trailingIcon: Icon(
@@ -231,7 +231,7 @@ class ProfilePage extends StatelessWidget {
                   needIcon: true,
                   leadingIcon: Image.asset(
                     "assets/icons/credit.png",
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                     height: 24.0,
                   ),
                   trailingIcon: Icon(
@@ -268,7 +268,7 @@ class ProfilePage extends StatelessWidget {
                   radius: 5.0,
                   leadingIcon: Icon(
                     Icons.lock,
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   trailingIcon: Icon(
                     CupertinoIcons.forward,
@@ -288,7 +288,7 @@ class ProfilePage extends StatelessWidget {
                   needIcon: true,
                   leadingIcon: Icon(
                     CupertinoIcons.bell_solid,
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   trailingIcon: Icon(
                     CupertinoIcons.forward,
@@ -308,7 +308,7 @@ class ProfilePage extends StatelessWidget {
                   needIcon: true,
                   leadingIcon: Image.asset(
                     "assets/icons/about.png",
-                    color: textDark_Yellow,
+                    color: Theme.of(context).colorScheme.primary,
                     height: 24.0,
                   ),
                   trailingIcon: Icon(

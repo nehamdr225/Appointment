@@ -60,6 +60,7 @@ class STheme with ChangeNotifier {
     canvasColor: Colors.white,
     fontFamily: 'Montserrat',
     textSelectionColor: Colors.black38,
+    unselectedWidgetColor: Colors.grey[500],
     textTheme: TextTheme( 
         headline: TextStyle(fontSize: 24.0, color: textDark, fontWeight: FontWeight.w500),
         title: TextStyle(fontSize: 18.0, color: textDark),

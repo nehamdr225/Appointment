@@ -23,8 +23,7 @@ class _SearchBarState extends State<SearchBar> {
           final _searching = snapshot.data;
           return AnimatedContainer(
             duration: Duration(milliseconds: 500),
-            height:
-                60, // searching true then 90, false then 130
+            height: 60, // searching true then 90, false then 130
             width: double.maxFinite,
             alignment: Alignment.centerLeft,
             curve: Curves.fastOutSlowIn,
@@ -53,7 +52,7 @@ class _SearchBarState extends State<SearchBar> {
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     height: 46,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.background.withOpacity(0.3),
+                      color: Theme.of(context).colorScheme.background,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Stack(
@@ -61,7 +60,13 @@ class _SearchBarState extends State<SearchBar> {
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.only(left: 15, right: 105),
-                          child: Icon(Icons.search, color: Theme.of(context).iconTheme.color,),
+                          child: Icon(
+                            Icons.search,
+                            color: Theme.of(context)
+                                .iconTheme
+                                .color
+                                .withOpacity(0.6),
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 55),
@@ -71,11 +76,23 @@ class _SearchBarState extends State<SearchBar> {
                               _bloc.onSearchOpen();
                             },
                             style: Theme.of(context).textTheme.body1,
-                            cursorColor: Theme.of(context).colorScheme.background,
+                            cursorColor: Theme.of(context)
+                                .textTheme
+                                .body1
+                                .color
+                                .withOpacity(0.4),
                             scrollPadding: EdgeInsets.zero,
                             decoration: InputDecoration.collapsed(
                               hintText: 'Search',
-                              hintStyle: Theme.of(context).textTheme.title,
+                              hintStyle: Theme.of(context)
+                                  .textTheme
+                                  .title
+                                  .copyWith(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .title
+                                          .color
+                                          .withOpacity(0.3)),
                             ),
                           ),
                         )
