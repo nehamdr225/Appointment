@@ -38,7 +38,7 @@ class FancyText extends StatelessWidget {
                   fontSize: size,
                   fontWeight: fontWeight,
                   color: Theme.of(context)
-                      .textTheme
+                      .textTheme 
                       .body1
                       .color
                       .withOpacity(opacity))
