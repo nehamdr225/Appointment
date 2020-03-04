@@ -1,5 +1,5 @@
-import 'package:appointment/UI/pages/ProfilePage.dart';
-import 'package:appointment/UI/pages/SubsPage.dart';
+import 'package:appointment/UI/pages/ProfilePage/ProfilePage.dart';
+import 'package:appointment/UI/pages/SubsPage/SubsPage.dart';
 import 'package:appointment/UI/pages/UserHomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:appointment/state/bloc.dart';

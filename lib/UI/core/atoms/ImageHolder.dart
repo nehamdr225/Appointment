@@ -1,4 +1,4 @@
-import 'package:appointment/UI/core/atoms/centerText.dart';
+//import 'package:appointment/UI/core/atoms/centerText.dart';
 import 'package:flutter/material.dart';
 
 class ImageHolder extends StatelessWidget {
