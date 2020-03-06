@@ -9,7 +9,7 @@ class ListItem {
 
   ListItem({
     @required this.bodyBuilder,
-    this.title,
+    this.title= '',
     this.subtitle = "",
     this.isExpandedInitially = false,
   })  : assert(title != null),
@@ -18,11 +18,12 @@ class ListItem {
   ExpansionPanelHeaderBuilder get headerBuilder =>
       (context, isExpanded) => new Row(
         children: [
-            new SizedBox(
-                width: 60.0,
-                child: Padding(padding: EdgeInsets.all(8.0),
-                  child: title,
-                )), // new Image.asset(title, height: 20.0, width: 20.0, color: Colors.black87,)),
+          Padding(padding: EdgeInsets.only(left: 15.0),),
+            // new SizedBox(
+            //     width: 60.0,
+            //     child: Padding(padding: EdgeInsets.all(8.0),
+            //       child: title,
+            //     )), // new Image.asset(title, height: 20.0, width: 20.0, color: Colors.black87,)),
             new Text(subtitle)
           ]);
 }

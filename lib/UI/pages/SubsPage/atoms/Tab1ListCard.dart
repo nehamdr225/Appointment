@@ -1,12 +1,14 @@
 import 'package:appointment/UI/core/atoms/EPanel.dart';
 import 'package:appointment/UI/core/atoms/FancyText.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class Tab1ListCard extends StatelessWidget {
   final name;
   final image;
   final caption;
-  Tab1ListCard({this.image, this.name, this.caption});
+  final Widget items;
+  Tab1ListCard({this.image, this.name, this.caption, this.items});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -14,7 +16,7 @@ class Tab1ListCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 2.0, bottom: 5.0),
       child: Container(
-        height: size.height * 0.35,
+        //height: size.height * 0.25,
         width: size.width * 0.90,
         decoration: BoxDecoration(
             color: theme.colorScheme.onBackground,
@@ -102,16 +104,62 @@ class Tab1ListCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 10,
-            ),
             EPanel(
               [
                 ListItem(
-                    title: Icon(Icons.local_offer),
+                     //Icon(CupertinoIcons.tags_solid, color: theme.colorScheme.secondary, size: 20,),
                     subtitle: "Available Offers",
                     bodyBuilder: (context) => Column(
-                          children: <Widget>[],
+                          children: items == null
+                              ? <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0, bottom: 20.0,),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          CupertinoIcons.circle_filled,
+                                          color: theme.colorScheme.secondary,
+                                          size: 15,
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.only(left:10.0),
+                                          width: size.width * 0.85,
+                                          child: FancyText(
+                                            defaultStyle: true,
+                                            textAlign: TextAlign.left,
+                                            text:
+                                                '5% Off when booking an appointment from Service App',
+                                          ),
+                                        ),
+                                        
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0, bottom: 20.0),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          CupertinoIcons.circle_filled,
+                                          color: theme.colorScheme.secondary,
+                                          size: 15,
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.only(left:10.0),
+                                          width: size.width * 0.85,
+                                          child: FancyText(
+                                            defaultStyle: true,
+                                            textAlign: TextAlign.justify,
+                                            text:
+                                                '\$5 cash back once appointment is complete',
+                                          ),
+                                        ),
+                                        
+                                      ],
+                                    ),
+                                  )
+                                ]
+                              : items,
                         )),
               ],
             ),
