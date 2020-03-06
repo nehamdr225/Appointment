@@ -107,7 +107,7 @@ class Tab1ListCard extends StatelessWidget {
             EPanel(
               [
                 ListItem(
-                     //Icon(CupertinoIcons.tags_solid, color: theme.colorScheme.secondary, size: 20,),
+                     //title:Icon(CupertinoIcons.tags_solid, color: theme.colorScheme.secondary, size: 20,),
                     subtitle: "Available Offers",
                     bodyBuilder: (context) => Column(
                           children: items == null
