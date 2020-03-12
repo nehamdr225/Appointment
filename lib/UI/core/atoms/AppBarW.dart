@@ -8,7 +8,7 @@ class AppBarW extends StatelessWidget {
   final bool logo;
   final bool settings;
   final String title;
-  AppBarW({this.elevation: 0.0, this.logo, this.settings, this.title: "", this.color: Colors.white});
+  AppBarW({this.elevation: 0.0, this.logo, this.settings, this.title: "", this.color});
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

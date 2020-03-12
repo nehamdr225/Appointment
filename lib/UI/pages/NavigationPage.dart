@@ -60,7 +60,7 @@ class _NavigationPageState extends State<NavigationPage> {
                             child: Container(
                               height: 55,
                               decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: Theme.of(context).colorScheme.onBackground,//Colors.white,
                                   borderRadius: BorderRadius.circular(15),
                                   boxShadow: [
                                     BoxShadow(

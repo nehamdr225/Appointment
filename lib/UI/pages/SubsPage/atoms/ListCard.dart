@@ -50,8 +50,8 @@ class _ListCardState extends State<ListCard> with TickerProviderStateMixin {
             color: theme.colorScheme.onBackground,
             borderRadius: BorderRadius.circular(5.0),
             boxShadow: [
-              BoxShadow(color: Colors.grey[300], offset: Offset(2, 3)),
-              BoxShadow(color: Colors.grey[200], offset: Offset(-1, -1))
+              BoxShadow(color: theme.colorScheme.onBackground.withOpacity(0.5), offset: Offset(2, 3)),
+              BoxShadow(color: theme.colorScheme.onBackground.withOpacity(0.4), offset: Offset(-1, -1))
             ]),
         child: Row(
           children: <Widget>[
@@ -63,7 +63,7 @@ class _ListCardState extends State<ListCard> with TickerProviderStateMixin {
             ),
             Container(
               padding: EdgeInsets.only(top: 18.0, left: 12.0, right: 2.0),
-              color: Colors.white,
+              color: theme.colorScheme.onBackground,//Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -30,15 +30,16 @@ class WhiteAppBar extends StatelessWidget {
       centerTitle: true,
       bottom: tabbar == true
       ? TabBar(
-        indicatorColor: theme.colorScheme.secondary,
-        unselectedLabelColor: theme.unselectedWidgetColor,
+        indicatorColor: theme.colorScheme.secondaryVariant,
+        unselectedLabelStyle: theme.textTheme.body1,
+        unselectedLabelColor: theme.textTheme.body1.color,//unselectedWidgetColor,
         labelColor: theme.colorScheme.primaryVariant,
         tabs: tabs,
         controller: controller,
         
       )
       : null ,
-      title: Text(title, style: theme.textTheme.body2),
+      title: Text(title, style: theme.textTheme.body1.copyWith(fontSize: 16.0)),
       leading: logo == true
           ? Padding(
               padding: EdgeInsets.only(top: 16.0, left: 8.0),

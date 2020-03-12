@@ -22,8 +22,8 @@ class Tab1ListCard extends StatelessWidget {
             color: theme.colorScheme.onBackground,
             borderRadius: BorderRadius.circular(5.0),
             boxShadow: [
-              BoxShadow(color: Colors.grey[300], offset: Offset(2, 3)),
-              BoxShadow(color: Colors.grey[200], offset: Offset(-1, -1))
+              BoxShadow(color: theme.colorScheme.onBackground.withOpacity(0.5), offset: Offset(2, 3)),
+              BoxShadow(color: theme.colorScheme.onBackground.withOpacity(0.4), offset: Offset(-1, -1))
             ]),
         child: Column(
           children: <Widget>[
@@ -43,7 +43,7 @@ class Tab1ListCard extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.only(top: 16.0, left: 10.0, right: 2.0),
-                  color: Colors.white,
+                  color: theme.colorScheme.onBackground,// Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,

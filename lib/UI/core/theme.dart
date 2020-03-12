@@ -9,7 +9,7 @@ const textDark_Yellow = Color(0xffFFD366); // yellow text for dark mode
 class STheme with ChangeNotifier {
   ThemeData serviceDarkTheme = ThemeData(
     iconTheme: IconThemeData(
-      color: Color(0xff1D2D44),
+      color: Color(0xfff5f5f5),
     ),
     colorScheme: ColorScheme(
       primary: Color(0xffFFBA08),
@@ -19,7 +19,7 @@ class STheme with ChangeNotifier {
       secondaryVariant: Color(0xff80ff2b),
       onSecondary: Color(0xff0c090d),
       background: Color(0xff191B24),
-      onBackground: Color(0xff404e60),//Color(0xff232633),      
+      onBackground: Color(0xff232633),      //Color(0xff404e60),
       onError: Color(0xffc5032b),
       error: Color(0xffc5032b),
       surface: Color(0xffffffff),

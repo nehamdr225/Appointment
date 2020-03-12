@@ -21,309 +21,319 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       backgroundColor: color.background,
-      body:  ListView(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 5.0,
+      body: ListView(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            height: 5.0,
+          ),
+          CircleAvatar(
+            //profile picture
+            backgroundColor: Colors.grey[500],
+            radius: 40.0,
+            child: CircleAvatar(
+              radius: 37.0,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage("assets/images/bakery.jpg"),
             ),
-            CircleAvatar(
-              //profile picture
-              backgroundColor: Colors.grey[500],
-              radius: 40.0,
-              child: CircleAvatar(
-                radius: 37.0,
-                backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage("assets/images/bakery.jpg"),
+          ),
+          Padding(
+            //Name
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              'Neha Manandhar',
+              style: textStyle.body1.copyWith(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 22.0,
+                  color: textStyle.body1.color.withOpacity(0.7)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Padding(
+            // your current balance card
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+            child: Container(
+              height: 80.0,
+              decoration: BoxDecoration(
+                color: color.primaryVariant,
+                borderRadius: BorderRadius.circular(5.0),
               ),
-            ),
-            Padding(
-              //Name
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                'Neha Manandhar',
-                style: textStyle.body1.copyWith(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22.0,
-                    color: textDark.withOpacity(0.7)),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Padding(
-              // your current balance card
-              padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-              child: Container(
-                height: 80.0,
-                decoration: BoxDecoration(
-                  color: color.primaryVariant,
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "20.0 USD",
-                      style: textStyle.body2.copyWith(
-                          fontSize: 21.0, fontWeight: FontWeight.w900),
-                    ),
-                    Text(
-                      "Your Current Credit",
-                      style:
-                          textStyle.body2.copyWith(fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              alignment: Alignment.centerRight,
-              padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0),
-              child: Text(
-                "This month",
-                style: textStyle.body1.copyWith(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w500,
-                    color: textDark.withOpacity(0.4)),
-              ),
-            ),
-            Padding(
-              //this month
-              padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 60.0,
-                    width: size.width * 0.43,
-                    decoration: BoxDecoration(
-                        color: color.onBackground,
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[300], offset: Offset(2, 3)),
-                          BoxShadow(
-                              color: Colors.grey[200], offset: Offset(-1, -1))
-                        ]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "20.0 USD",
-                          style: textStyle.body1.copyWith(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w900,
-                              color: textDark.withOpacity(0.7)),
-                        ),
-                        Text(
-                          "Your Refunds",
-                          style: textStyle.body1.copyWith(
-                              fontWeight: FontWeight.w400,
-                              color: textDark.withOpacity(0.7)),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    "20.0 USD",
+                    style: textStyle.body2
+                        .copyWith(fontSize: 21.0, fontWeight: FontWeight.w900),
                   ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Container(
-                    height: 60.0,
-                    width: size.width * 0.43,
-                    decoration: BoxDecoration(
-                        color: color.onBackground,
-                        borderRadius: BorderRadius.circular(5.0),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[300], offset: Offset(2, 3)),
-                          BoxShadow(
-                              color: Colors.grey[200], offset: Offset(-1, -1))
-                        ]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "20.0 USD",
-                          style: textStyle.body1.copyWith(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w900,
-                              color: textDark.withOpacity(0.7)),
-                        ),
-                        Text(
-                          "Your Sendings",
-                          style: textStyle.body1.copyWith(
-                              fontWeight: FontWeight.w400,
-                              color: textDark.withOpacity(0.7)),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    "Your Current Credit",
+                    style:
+                        textStyle.body2.copyWith(fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding:
-                  const EdgeInsets.only(left: 15.0, right: 15.0, top: 20.0),
-              child: Text(
-                "GENERAL",
-                style: textStyle.body1.copyWith(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w500,
-                    color: textDark.withOpacity(0.6)),
-              ),
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0),
+            child: Text(
+              "This month",
+              style: textStyle.body1.copyWith(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w500,
+                  color: textStyle.body1.color.withOpacity(0.4)),
             ),
-            ProfileCard( //General options
-              widgets: [
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  shape: true,
-                  radius: 5.0,
-                  leadingIcon: Image.asset(
-                    "assets/icons/profile.png",
-                    color: Theme.of(context).colorScheme.primary,
-                    height: 24.0,
+          ),
+          Padding(
+            //this month
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  height: 60.0,
+                  width: size.width * 0.43,
+                  decoration: BoxDecoration(
+                      color: color.onBackground,
+                      borderRadius: BorderRadius.circular(5.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onBackground
+                                .withOpacity(0.5),
+                            offset: Offset(2, 3)),
+                        BoxShadow(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onBackground
+                                .withOpacity(0.4),
+                            offset: Offset(-1, -1))
+                      ]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "20.0 USD",
+                        style: textStyle.body1.copyWith(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w900,
+                            color: textStyle.body1.color.withOpacity(0.7)),
+                      ),
+                      Text(
+                        "Your Refunds",
+                        style: textStyle.body1.copyWith(
+                            fontWeight: FontWeight.w400,
+                            color: textStyle.body1.color.withOpacity(0.7)),
+                      ),
+                    ],
                   ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "Personal Details",
-                  onPressed: () {},
                 ),
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  shape: true,
-                  radius: 5.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  leadingIcon: Image.asset(
-                    "assets/icons/account.png",
-                    color: Theme.of(context).colorScheme.primary,
-                    height: 24.0,
-                  ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "Account Details",
-                  onPressed: () {},
+                SizedBox(
+                  width: 10.0,
                 ),
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  shape: true,
-                  radius: 5.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  leadingIcon: Image.asset(
-                    "assets/icons/credit.png",
-                    color: Theme.of(context).colorScheme.primary,
-                    height: 24.0,
+                Container(
+                  height: 60.0,
+                  width: size.width * 0.43,
+                  decoration: BoxDecoration(
+                      color: color.onBackground,
+                      borderRadius: BorderRadius.circular(5.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onBackground
+                                .withOpacity(0.5),
+                            offset: Offset(2, 3)),
+                        BoxShadow(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onBackground
+                                .withOpacity(0.4),
+                            offset: Offset(-1, -1))
+                      ]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "20.0 USD",
+                        style: textStyle.body1.copyWith(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w900,
+                            color: textStyle.body1.color.withOpacity(0.7)),
+                      ),
+                      Text(
+                        "Your Sendings",
+                        style: textStyle.body1.copyWith(
+                            fontWeight: FontWeight.w400,
+                            color: textStyle.body1.color.withOpacity(0.7)),
+                      ),
+                    ],
                   ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "Add Credit",
-                  onPressed: () {},
                 ),
               ],
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding:
-                  const EdgeInsets.only(left: 15.0, right: 15.0, top: 20.0),
-              child: Text(
-                "OTHERS",
-                style: textStyle.body1.copyWith(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w500,
-                    color: textDark.withOpacity(0.6)),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 20.0),
+            child: Text(
+              "GENERAL",
+              style: textStyle.body1.copyWith(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w500,
+                  color: textStyle.body1.color.withOpacity(0.6)),
+            ),
+          ),
+          ProfileCard(
+            //General options
+            widgets: [
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                shape: true,
+                radius: 5.0,
+                leadingIcon: Image.asset(
+                  "assets/icons/profile.png",
+                  color: Theme.of(context).colorScheme.primary,
+                  height: 24.0,
+                ),
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                ),
+                text: "Personal Details",
+                onPressed: () {},
               ),
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                shape: true,
+                radius: 5.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                leadingIcon: Image.asset(
+                  "assets/icons/account.png",
+                  color: Theme.of(context).colorScheme.primary,
+                  height: 24.0,
+                ),
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                ),
+                text: "Account Details",
+                onPressed: () {},
+              ),
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                shape: true,
+                radius: 5.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                leadingIcon: Image.asset(
+                  "assets/icons/credit.png",
+                  color: Theme.of(context).colorScheme.primary,
+                  height: 24.0,
+                ),
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                ),
+                text: "Add Credit",
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 20.0),
+            child: Text(
+              "OTHERS",
+              style: textStyle.body1.copyWith(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w500,
+                  color: textDark.withOpacity(0.6)),
             ),
-            ProfileCard(
-              widgets: [
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  shape: true,
-                  radius: 5.0,
-                  leadingIcon: Icon(
-                    Icons.lock,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "Password",
-                  onPressed: () {},
+          ),
+          ProfileCard(
+            widgets: [
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                shape: true,
+                radius: 5.0,
+                leadingIcon: Icon(
+                  Icons.lock,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  shape: true,
-                  radius: 5.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  leadingIcon: Icon(
-                    CupertinoIcons.bell_solid,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "Notifications",
-                  onPressed: () {},
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
                 ),
-                FRaisedButton(
-                  elevation: 0.5,
-                  height: 50.0,
-                  shape: true,
-                  radius: 5.0,
-                  color:
-                      Theme.of(context).textTheme.body1.color.withOpacity(0.7),
-                  bgcolor: Theme.of(context).colorScheme.onBackground,
-                  needIcon: true,
-                  leadingIcon: Image.asset(
-                    "assets/icons/about.png",
-                    color: Theme.of(context).colorScheme.primary,
-                    height: 24.0,
-                  ),
-                  trailingIcon: Icon(
-                    CupertinoIcons.forward,
-                    color: Theme.of(context).iconTheme.color.withOpacity(0.6),
-                  ),
-                  text: "About",
-                  onPressed: () {},
+                text: "Password",
+                onPressed: () {},
+              ),
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                shape: true,
+                radius: 5.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                leadingIcon: Icon(
+                  CupertinoIcons.bell_solid,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-              ],
-            ),
-            SizedBox(height: 80.0,)
-          ],
-        ),
-      
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                ),
+                text: "Notifications",
+                onPressed: () {},
+              ),
+              FRaisedButton(
+                elevation: 0.5,
+                height: 50.0,
+                shape: true,
+                radius: 5.0,
+                color: Theme.of(context).textTheme.body1.color.withOpacity(0.7),
+                bgcolor: Theme.of(context).colorScheme.onBackground,
+                needIcon: true,
+                leadingIcon: Image.asset(
+                  "assets/icons/about.png",
+                  color: Theme.of(context).colorScheme.primary,
+                  height: 24.0,
+                ),
+                trailingIcon: Icon(
+                  CupertinoIcons.forward,
+                  color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                ),
+                text: "About",
+                onPressed: () {},
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 80.0,
+          )
+        ],
+      ),
     );
   }
 }

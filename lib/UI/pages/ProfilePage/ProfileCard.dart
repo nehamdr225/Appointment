@@ -15,8 +15,12 @@ class ProfileCard extends StatelessWidget {
             color: theme.colorScheme.onBackground,
             borderRadius: BorderRadius.circular(5.0),
             boxShadow: [
-              BoxShadow(color: Colors.grey[300], offset: Offset(2, 3)),
-              BoxShadow(color: Colors.grey[200], offset: Offset(-1, -1))
+              BoxShadow(
+                  color: theme.colorScheme.onBackground.withOpacity(0.5),
+                  offset: Offset(2, 3)),
+              BoxShadow(
+                  color: theme.colorScheme.onBackground.withOpacity(0.4),
+                  offset: Offset(-1, -1))
             ]),
         child: Column(
           children: widgets,

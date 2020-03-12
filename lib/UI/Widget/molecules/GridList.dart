@@ -23,7 +23,7 @@ class GridList extends StatelessWidget {
           borderOnForeground: true,
           shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: Colors.grey[300],
+              color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
               width: 1.0,
             ),
             borderRadius: BorderRadius.circular(4.0),

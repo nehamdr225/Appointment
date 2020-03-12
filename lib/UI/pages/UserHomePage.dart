@@ -33,7 +33,7 @@ class _UserHomePageState extends State<UserHomePage> {
         child: AppBarW(
           logo: true,
           settings: true,
-          color: textLight,
+          color: Theme.of(context).textTheme.body2.color,
         ),
       ),
       body: ListView(
@@ -108,7 +108,8 @@ class _UserHomePageState extends State<UserHomePage> {
                         style: textStyle.body1.copyWith(
                             fontSize: 19.0,
                             fontWeight: FontWeight.w600,
-                            color: textDark.withOpacity(0.7)),
+                            color: textStyle.body1.color.withOpacity(0.7)
+                        ),
                         textAlign: TextAlign.justify,
                       ),
                     ],
