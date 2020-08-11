@@ -49,9 +49,9 @@ class EPanelState extends State<EPanel> {
   @override
   Widget build(BuildContext context) {
     return ExpansionPanelList(
-      bodyColor: Theme.of(context).colorScheme.onBackground,
-      shadowColor: Theme.of(context).colorScheme.onBackground,
-      iconColor: Theme.of(context).iconTheme.color,
+      // bodyColor: Theme.of(context).colorScheme.onBackground,
+      // shadowColor: Theme.of(context).colorScheme.onBackground,
+      // iconColor: Theme.of(context).iconTheme.color,
       children: widget.items
           .map(
             (item) => new ExpansionPanel(
